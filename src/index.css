@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('https://fonts.cdnfonts.com/s/63607/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-brand-200 text-ink-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-600/20 transition-all duration-200 hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-600/30 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-ink-200 bg-white px-6 py-3 text-sm font-semibold text-ink-800 shadow-sm transition-all duration-200 hover:border-ink-300 hover:bg-ink-50 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-ink-600 transition-colors duration-200 hover:text-ink-900 hover:bg-ink-100;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 transition-all duration-200 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10;
+  }
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-white shadow-sm;
+  }
+  .label-text {
+    @apply mb-1.5 block text-sm font-semibold text-ink-700;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/60;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
